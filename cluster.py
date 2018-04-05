@@ -302,7 +302,7 @@ for city in municipalities:
 	df_filtered = df[(df['Minor Civil Division'] == city)]
 
 	# iterate over rows where the home municipalities is the given municipality
-	for index, row in df_filtered.iterrows():
+	for _, row in df_filtered.iterrows():
 
 		# retreive name of work city
 		work_city = row['Minor Civil Division.1']
@@ -324,7 +324,7 @@ for cluster in cluster_commute:
 	# check if cluster is in cluster_count
 	if cluster in cluster_count:
 
-		print(cluster, cluster_commute[cluster])
+		#print(cluster, cluster_commute[cluster])
 
 		# increment total figures 
 		total_commuters += cluster_commute[cluster]['commuters']
